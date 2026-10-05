@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fila Mack</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Fila Mack</h1>
+      </header>
+
+      <section class="actions" aria-label="Ações da fila">
+        <button id="emit-ticket-button" type="button">Emitir senha</button>
+        <button id="next-ticket-button" type="button">Chamar próxima</button>
+      </section>
+
+      <section class="finish-panel" aria-label="Finalizar atendimento">
+        <label for="finish-number-input">Número da senha</label>
+        <input id="finish-number-input" type="number" min="1" step="1" placeholder="Ex.: 3" />
+        <button id="finish-ticket-button" type="button">Finalizar</button>
+      </section>
+
+      <div id="status-message" class="status-message" role="status" aria-live="polite">
+        A fila está pronta.
+      </div>
+
+      <section class="queue-panels">
+        <article class="queue-panel">
+          <h2>Senha em atendimento</h2>
+          <p id="active-ticket">Nenhuma senha em atendimento.</p>
+        </article>
+
+        <article class="queue-panel">
+          <h2>Senhas aguardando</h2>
+          <ul id="waiting-list">
+            <li>Nenhuma senha aguardando.</li>
+          </ul>
+        </article>
+
+        <article class="queue-panel">
+          <h2>Senhas finalizadas</h2>
+          <ul id="finished-list">
+            <li>Nenhuma senha finalizada.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
